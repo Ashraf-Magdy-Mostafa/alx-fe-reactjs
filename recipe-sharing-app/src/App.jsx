@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
 import SearchBar from "./components/SearchBar";
 import FavoritesList from "./components/FavoritesList";
 import RecommendationsList from "./components/RecommendationsList";
-import RecipeDetailsPage from "./pages/RecipeDetailsPage";
+import RecipeDetails from "./components/RecipeDetails";
 
 const Home = () => {
   return (
@@ -22,12 +22,21 @@ const Home = () => {
   );
 };
 
+const DetailsLayout = () => {
+  return (
+    <div style={{ maxWidth: 720, margin: "0 auto", padding: 16 }}>
+      <Link to="/">← Back</Link>
+      <RecipeDetails />
+    </div>
+  );
+};
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/recipes/:id" element={<RecipeDetailsPage />} />
+        <Route path="/recipes/:id" element={<DetailsLayout />} />
       </Routes>
     </BrowserRouter>
   );
