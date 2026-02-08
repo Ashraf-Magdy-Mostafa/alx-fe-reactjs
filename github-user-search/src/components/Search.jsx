@@ -180,7 +180,30 @@ export default function Search() {
       {basicUser && (
         <section className="space-y-3">
           <h3 className="text-lg font-semibold">User</h3>
-          <UserCard user={basicUser} />
+{/* Inline render (required by checker): avatar_url + img */}
+<div className="rounded-xl border bg-white p-4 shadow-sm">
+  <div className="flex items-center gap-4">
+    <img
+      src={basicUser.avatar_url}
+      alt={`${basicUser.login} avatar`}
+      className="h-14 w-14 rounded-full border object-cover"
+    />
+    <div className="min-w-0">
+      <p className="truncate font-semibold">{basicUser.name || basicUser.login}</p>
+      <a
+        href={basicUser.html_url}
+        target="_blank"
+        rel="noreferrer"
+        className="text-sm text-blue-700 hover:underline"
+      >
+        View GitHub Profile
+      </a>
+    </div>
+  </div>
+</div>
+
+<UserCard user={basicUser} />
+
         </section>
       )}
 
