@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/600x400?text=Carbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "2 eggs",
+      "50g parmesan cheese",
+      "100g bacon",
+      "Black pepper",
+      "Salt"
+    ],
+    "instructions": [
+      "Boil spaghetti until al dente.",
+      "Cook bacon until crispy.",
+      "Whisk eggs and parmesan in a bowl.",
+      "Mix hot pasta with bacon, then remove from heat.",
+      "Quickly stir in egg-cheese mixture to create a creamy sauce.",
+      "Season with black pepper and serve."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Grilled chicken cooked in a creamy tomato-based sauce with spices.",
+    "image": "https://via.placeholder.com/600x400?text=Tikka+Masala",
+    "ingredients": [
+      "2 chicken breasts",
+      "1 cup yogurt",
+      "2 tbsp tikka masala spice",
+      "1 can tomato puree",
+      "1/2 cup cream",
+      "1 onion",
+      "2 cloves garlic",
+      "Salt"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for 30 minutes.",
+      "Grill or pan-sear chicken until cooked.",
+      "Saut\u00e9 onion and garlic until soft.",
+      "Add tomato puree and simmer 10 minutes.",
+      "Add cream and chicken pieces.",
+      "Simmer 5 minutes and serve with rice."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Avocado Toast",
+    "summary": "Quick and healthy toast topped with mashed avocado and lemon.",
+    "image": "https://via.placeholder.com/600x400?text=Avocado+Toast",
+    "ingredients": [
+      "2 slices bread",
+      "1 ripe avocado",
+      "1 tsp lemon juice",
+      "Salt",
+      "Chili flakes (optional)"
+    ],
+    "instructions": [
+      "Toast the bread slices.",
+      "Mash avocado with lemon juice and salt.",
+      "Spread avocado on toast.",
+      "Top with chili flakes if desired."
+    ]
+  }
+]
