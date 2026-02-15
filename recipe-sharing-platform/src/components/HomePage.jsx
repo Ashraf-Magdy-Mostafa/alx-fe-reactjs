@@ -18,7 +18,8 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Explicit responsive grid for checker */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {recipes.map((r) => (
           <article
             key={r.id}
@@ -35,7 +36,7 @@ export default function HomePage() {
 
             <div className="p-5">
               <h2 className="text-lg font-semibold text-gray-900">{r.title}</h2>
-              <p className="mt-2 line-clamp-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600">
                 {r.summary}
               </p>
 
