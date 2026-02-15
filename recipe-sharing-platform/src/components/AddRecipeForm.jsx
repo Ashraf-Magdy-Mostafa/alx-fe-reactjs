@@ -40,7 +40,7 @@ export default function AddRecipeForm() {
 
   const isValid = Object.keys(errors).length === 0;
 
-  function onSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setTouched({ title: true, ingredients: true, steps: true });
 
@@ -82,7 +82,7 @@ export default function AddRecipeForm() {
       </div>
 
       <form
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
         className="space-y-5 rounded-2xl border bg-white p-6 shadow-sm"
       >
         <div>
