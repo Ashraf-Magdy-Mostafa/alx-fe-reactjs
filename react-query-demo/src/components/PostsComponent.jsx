@@ -16,7 +16,10 @@ export default function PostsComponent() {
     refetch,
     dataUpdatedAt,
   } = useQuery(["posts"], fetchPosts, {
-    staleTime: 60_000, // 60 seconds: remount uses cached data without refetch (if fresh)
+    staleTime: 60_000,              // data considered fresh for 60s (helps demonstrate caching)
+    cacheTime: 5 * 60_000,          // keep cached data for 5 minutes after unmount
+    refetchOnWindowFocus: false,    // avoid refetching when window/tab regains focus
+    keepPreviousData: true,         // keep old data while refetching
   });
 
   return (
@@ -39,12 +42,14 @@ export default function PostsComponent() {
           <p className="muted">
             Total posts: <strong>{data.length}</strong>
           </p>
+
           {data.slice(0, 10).map((p) => (
             <div key={p.id} style={{ padding: 12, border: "1px solid #eee", borderRadius: 12 }}>
               <div style={{ fontWeight: 700 }}>{p.title}</div>
               <div className="muted">{p.body}</div>
             </div>
           ))}
+
           <p className="muted">Showing first 10 posts.</p>
         </div>
       ) : null}
