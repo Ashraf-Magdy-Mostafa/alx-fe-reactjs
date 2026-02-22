@@ -6,9 +6,15 @@ import * as Yup from "yup";
  * File name requested by task: formikForm.js
  */
 const schema = Yup.object({
-  username: Yup.string().trim().required("Username is required"),
-  email: Yup.string().trim().email("Enter a valid email").required("Email is required"),
-  password: Yup.string().trim().min(6, "Min 6 characters").required("Password is required"),
+  username: Yup.string().required("Username is required"),
+  email: Yup.string()
+    .trim()
+    .email("Enter a valid email")
+    .required("Email is required"),
+  password: Yup.string()
+    .trim()
+    .min(6, "Min 6 characters")
+    .required("Password is required"),
 });
 
 export default function FormikForm() {
@@ -24,7 +30,11 @@ export default function FormikForm() {
           try {
             // Mock API simulation
             await new Promise((r) => setTimeout(r, 600));
-            setStatus({ ok: true, message: "Mock registration successful ✅", values });
+            setStatus({
+              ok: true,
+              message: "Mock registration successful ✅",
+              values,
+            });
             resetForm();
           } catch {
             setStatus({ ok: false, message: "Mock registration failed ❌" });
@@ -39,7 +49,11 @@ export default function FormikForm() {
               <label>
                 <div>Username</div>
                 <Field name="username" placeholder="ashraf" />
-                <ErrorMessage name="username" component="div" className="error" />
+                <ErrorMessage
+                  name="username"
+                  component="div"
+                  className="error"
+                />
               </label>
 
               <label>
@@ -51,7 +65,11 @@ export default function FormikForm() {
               <label>
                 <div>Password</div>
                 <Field type="password" name="password" placeholder="••••••••" />
-                <ErrorMessage name="password" component="div" className="error" />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="error"
+                />
               </label>
 
               <button type="submit" disabled={isSubmitting}>
