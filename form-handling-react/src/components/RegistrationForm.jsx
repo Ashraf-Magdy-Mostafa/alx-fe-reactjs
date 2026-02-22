@@ -22,8 +22,8 @@ export default function RegistrationForm() {
   function validate() {
     const e = {};
     if (!username.trim()) e.username = "Username is required";
-    if (!email.trim()) e.email = "Email is required";
-    if (!password.trim()) e.password = "Password is required";
+    if (!email) e.email = "Email is required";
+    if (!password) e.password = "Password is required";
     return e;
   }
 
@@ -58,7 +58,10 @@ export default function RegistrationForm() {
     <div className="card">
       <h2>Controlled Registration Form</h2>
 
-      <form onSubmit={onSubmit} style={{ display: "grid", gap: 10, maxWidth: 420 }}>
+      <form
+        onSubmit={onSubmit}
+        style={{ display: "grid", gap: 10, maxWidth: 420 }}
+      >
         <label>
           <div>Username</div>
           <input
@@ -67,7 +70,9 @@ export default function RegistrationForm() {
             onChange={(e) => setUsername(e.target.value)}
             placeholder="ashraf"
           />
-          {errors.username ? <div className="error">{errors.username}</div> : null}
+          {errors.username ? (
+            <div className="error">{errors.username}</div>
+          ) : null}
         </label>
 
         <label>
@@ -90,7 +95,9 @@ export default function RegistrationForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
           />
-          {errors.password ? <div className="error">{errors.password}</div> : null}
+          {errors.password ? (
+            <div className="error">{errors.password}</div>
+          ) : null}
         </label>
 
         <button type="submit" disabled={isSubmitting}>
