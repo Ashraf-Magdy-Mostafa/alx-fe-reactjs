@@ -11,11 +11,12 @@ export default function PostsComponent() {
     data,
     error,
     isLoading,
+    isError,
     isFetching,
     refetch,
     dataUpdatedAt,
   } = useQuery(["posts"], fetchPosts, {
-    staleTime: 60_000, // 60 seconds: within this time, remount uses cached data without refetch
+    staleTime: 60_000, // 60 seconds: remount uses cached data without refetch (if fresh)
   });
 
   return (
@@ -31,11 +32,13 @@ export default function PostsComponent() {
       </p>
 
       {isLoading ? <p>Loading...</p> : null}
-      {error ? <p className="error">{String(error.message || error)}</p> : null}
+      {isError ? <p className="error">{String(error?.message || error)}</p> : null}
 
       {data ? (
         <div style={{ display: "grid", gap: 10 }}>
-          <p className="muted">Total posts: <strong>{data.length}</strong></p>
+          <p className="muted">
+            Total posts: <strong>{data.length}</strong>
+          </p>
           {data.slice(0, 10).map((p) => (
             <div key={p.id} style={{ padding: 12, border: "1px solid #eee", borderRadius: 12 }}>
               <div style={{ fontWeight: 700 }}>{p.title}</div>
